@@ -11,4 +11,4 @@ $routes->group('api', ['namespace' => 'App\\Controllers\\Api'], function ($route
 });
 
 
-$routes->get('/', 'Web\DashboardController::index');
+$routes->get('/', 'Web\DashboardController::dashboard');

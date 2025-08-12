@@ -6,7 +6,7 @@ use App\Controllers\BaseController;
 
 class DashboardController extends BaseController
 {
-    public function index(): string
+    public function dashboard(): string
     {
         return view('templates/header')
             .  view('templates/sidebar')

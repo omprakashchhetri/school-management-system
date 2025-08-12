@@ -15,4 +15,8 @@ class DashboardController extends BaseController
             .  view('templates/footer')
         ;
     }
+    public function loginTest(): string
+    {
+        return view('pages/logintest');
+    }
 }

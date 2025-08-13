@@ -7,9 +7,10 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->group('api', ['namespace' => 'App\\Controllers\\Api'], function ($routes) {
-    // $routes->get('products', 'Products::index');
+    $routes->post('login', 'AuthController::index');
 });
 
 
-$routes->get('/', 'Web\DashboardController::index');
-$routes->get('login', 'Web\Auth::login');
+$routes->get('/', 'Web\DashboardController::dashboard');
+$routes->get('login', 'Web\DashboardController::login'); //test endpoint for login, replace with actual login page
+// $routes->post('/api/login', 'Api\AuthController::index');

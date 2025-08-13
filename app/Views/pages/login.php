@@ -81,17 +81,17 @@
                 <p class="text-center text-gray-600 text-15 mb-32">Please sign in to your account and start the
                     adventure</p>
 
-                <form action="sign-in.html#">
+                <form id="loginForm">
                     <div class="mb-20">
                         <!-- Bootstrap segmented toggle for Student / Teacher -->
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="btn-group w-75" role="toolbar" aria-label="Select role" id="roleToggle">
-                                <input type="radio" class="btn-check" name="role" id="role-student" value="student"
+                                <input type="radio" class="btn-check" name="type" id="role-student" value="student"
                                     autocomplete="off" checked>
                                 <label class="role-toggle border border-primary px-4 btn btn-outline-primary"
                                     for="role-student">Student</label>
 
-                                <input type="radio" class="btn-check" name="role" id="role-teacher" value="teacher"
+                                <input type="radio" class="btn-check" name="type" id="role-teacher" value="employee"
                                     autocomplete="off">
                                 <label class="role-toggle border border-primary px-4 btn btn-outline-primary"
                                     for="role-teacher">Teacher</label>
@@ -99,22 +99,22 @@
                         </div>
                     </div>
                     <div class="mb-24">
-                        <label for="fname" class="form-id-label form-label mb-8 h6">Student Id</label>
+                        <label for="email" class="form-id-label form-label mb-8 h6">Student Id</label>
                         <div class="position-relative">
-                            <input type="text" class="form-control py-11 ps-40" id="fname"
-                                placeholder="Type your username">
+                            <input type="text" name="email" class="form-control py-11 ps-40" id="email"
+                                placeholder="Type your username" required>
                             <span class="position-absolute top-50 translate-middle-y ms-16 text-gray-600 d-flex"><i
                                     class="ph ph-user"></i></span>
                         </div>
                     </div>
                     <div class="mb-24">
-                        <label for="current-password" class="form-label mb-8 h6">Password</label>
+                        <label for="password" class="form-label mb-8 h6">Password</label>
                         <div class="position-relative">
-                            <input type="password" class="form-control py-11 ps-40" id="current-password"
-                                placeholder="Enter Current Password" value="password">
+                            <input type="password" name="password" class="form-control py-11 ps-40" id="password"
+                                placeholder="Enter Current Password" required>
                             <span
                                 class="toggle-password position-absolute top-50 inset-inline-end-0 me-16 translate-middle-y ph ph-eye-slash"
-                                id="#current-password"></span>
+                                id="#password"></span>
                             <span class="position-absolute top-50 translate-middle-y ms-16 text-gray-600 d-flex"><i
                                     class="ph ph-lock"></i></span>
                         </div>
@@ -130,6 +130,8 @@
                     </div>
                     <button type="submit" class="btn btn-main rounded-pill w-100">Sign In</button>
 
+                    <div id="response" style="margin-top:20px; color:blue;"></div>
+
                     <div class="divider my-32 position-relative text-center">
                         <span class="divider__text text-gray-600 text-13 fw-medium px-26 bg-white"></span>
                     </div>
@@ -138,7 +140,6 @@
                         <small class="text-muted">Developed By</small>
                         <img class="max-w-100" src="<?=base_url('assets/images/logo/logo-echo.png')?>" alt="">
                     </div>
-
                 </form>
             </div>
         </div>

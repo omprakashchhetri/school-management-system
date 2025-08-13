@@ -13,4 +13,24 @@ jQuery(document).ready(function () {
 
   // Initialize on page load
   updateRoleUI();
+  jQuery("#loginForm").on("submit", function (e) {
+    e.preventDefault();
+
+    $.ajax({
+      url: "api/login",
+      type: "POST",
+      data: {
+        email: jQuery("#email").val(),
+        password: jQuery("#password").val(),
+        type: jQuery("input[name='type']:checked").val(),
+      },
+      dataType: "json",
+      success: function (response) {
+        jQuery("#response").text(JSON.stringify(response));
+      },
+      error: function (xhr) {
+        jQuery("#response").text("Error: " + xhr.responseText);
+      },
+    });
+  });
 });

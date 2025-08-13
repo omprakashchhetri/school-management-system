@@ -12,3 +12,4 @@ $routes->group('api', ['namespace' => 'App\\Controllers\\Api'], function ($route
 
 
 $routes->get('/', 'Web\DashboardController::index');
+$routes->get('login', 'Web\Auth::login');
